@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankSpawner : MonoBehaviour
+public class TankView : MonoBehaviour
 {
-    public TankView tankView;
+    private TankController tankController;
 
     // Start is called before the first frame update
     void Start()
     {
-        CreateTank();
 
     }
 
@@ -17,11 +16,10 @@ public class TankSpawner : MonoBehaviour
     void Update()
     {
 
-
     }
-    private void CreateTank()
+    public void setTankController(TankController _tankController)
     {
-        TankModel tankModel = new TankModel();
-        TankController tankController = new TankController(tankModel, tankView);
+        tankController = _tankController;
+
     }
 }
